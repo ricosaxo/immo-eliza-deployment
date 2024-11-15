@@ -7,6 +7,10 @@ from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 from geopy.distance import geodesic
 
+# Set Streamlit server configurations for correct port and address
+st.set_option('server.port', 10000)
+st.set_option('server.address', '0.0.0.0')
+
 # Load the trained model and encodings
 model = joblib.load('best_trained_model.pkl')
 building_encoding = joblib.load('State_of_building_encoding.pkl')
@@ -132,3 +136,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+st._config.set_option("server.port", 10000)
+st._config.set_option("server.address", "0.0.0.0")

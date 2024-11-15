@@ -55,6 +55,10 @@ def is_within_15km_of_city(house_coords):
             return True
     return False
 
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI is running!"}
+
 @app.post("/predict")
 def predict_price(data: HouseData):
     # Get coordinates
